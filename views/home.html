@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestbook Form</title>
+    <!-- Favicon -->
+    <link rel="icon" href="images/form_icon.png">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/form-style.css"> 
+</head>
+<body>
+    <h1>Contact Form</h1>
+    <form class="guestbook-form">      
+       <div class="field-group">
+           <label for="fname">First name:</label>
+           <input type="text" id="fname" name="fname">
+       </div>
+       <div class="field-group">
+           <label for="lname">Last name:</label>
+           <input type="text" id="lname" name="lname">
+       </div>
+       <div class="field-group">
+           <label for="jtitle">Job Title:</label>
+           <input type="text" id="jtitle" name="jtitle">
+       </div>
+       <div class="field-group">
+           <label for="company">Company:</label>
+           <input type="text" id="company" name="company">
+       </div>
+       <div class="field-group">
+           <label for="linkedin">LinkedIn URL:</label>
+           <input type="url" id="linkedin" name="linkedin">
+       </div>
+       <div class="field-group">
+           <label for="email">Email Address:</label>
+           <input type="email" id="email" name="email" autocomplete="email">
+       </div>
+       <div class="field-group">
+           <label for="meet">How did we meet?</label>
+           <select id="meet" name="meet">
+               <option value="">Please select</option>
+               <option value="school">At school</option>
+               <option value="work">At work</option>
+               <option value="event">At an event</option>
+               <option value="linkedin">Through LinkedIn</option>
+               <option value="friend">Through a friend</option>
+           </select>
+       </div>
+       <div class="field-group">
+           <label for="other">Other (Please specify)</label>
+           <input type="text" id="other" name="other">
+       </div>
+       <div class="field-group full-width">
+           <label for="message">Message:</label>
+           <textarea id="message" name="message" rows="5"></textarea>
+       </div>
+       <div class="field-group full-width checkbox-group">
+           <label>
+               <input type="checkbox" name="addme" value="yes">
+               Please add me to your mailing list
+           </label>
+       </div>
+       <div class="field-group full-width radio-group">
+           <p>Choose an email format:</p>
+           <label><input type="radio" id="html" name="email_format" value="HTML"> HTML</label>
+           <label><input type="radio" id="text" name="email_format" value="Text"> Text</label>
+       </div>
+       <div class="field-group full-width">
+           <button type="submit">Submit</button>
+       </div>
+    </form>
+</body>
+</html>
+
+
+
