@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guestbook Form</title>
+
+     <!-- Link to JavaScript -->
+    <script src="/js/guestform.js"defer></script>
+    
     <!-- Favicon -->
     <link rel="icon" href="images/form_icon.png">
+    
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles/form-style.css"> 
 </head>
 <body>
     <h1>Contact Form</h1>
-    <form class="guestbook-form">      
+    <form id= "guest-form"class="guestbook-form">      
        <div class="field-group">
            <label for="fname">First name:</label>
            <input type="text" id="fname" name="fname">
+           <span id="err-fname" class="error">First name cannot be empty!</span>
        </div>
        <div class="field-group">
            <label for="lname">Last name:</label>
            <input type="text" id="lname" name="lname">
+           <span id="err-lname" class="error">Last name cannot be empty!</span>
        </div>
        <div class="field-group">
            <label for="jtitle">Job Title:</label>
@@ -31,10 +38,13 @@
        <div class="field-group">
            <label for="linkedin">LinkedIn URL:</label>
            <input type="url" id="linkedin" name="linkedin">
+           <span id="err-linkedin" class="error">LinkedIn must start with https://linkedin.com/in/</span>
        </div>
        <div class="field-group">
            <label for="email">Email Address:</label>
            <input type="email" id="email" name="email" autocomplete="email">
+           <span id="err-email" class="error">Email must include @ and . !</span>
+
        </div>
        <div class="field-group">
            <label for="meet">How did we meet?</label>
@@ -45,23 +55,26 @@
                <option value="event">At an event</option>
                <option value="linkedin">Through LinkedIn</option>
                <option value="friend">Through a friend</option>
+               <option value="other">Other</option>
            </select>
+           <span id="err-meet" class="error">Please select how we met.</span>
        </div>
-       <div class="field-group">
+       <div id="other-text" class="field-group">
            <label for="other">Other (Please specify)</label>
            <input type="text" id="other" name="other">
+           <span id="err-other" class="error">Please specify how we met.</span>
        </div>
        <div class="field-group full-width">
            <label for="message">Message:</label>
            <textarea id="message" name="message" rows="5"></textarea>
        </div>
        <div class="field-group full-width checkbox-group">
-           <label>
-               <input type="checkbox" name="addme" value="yes">
-               Please add me to your mailing list
-           </label>
+               <label for = "addme" > 
+               <input type="checkbox" id="addme" name="addme" value="yes">
+               Please add me to your mailing list 
+              </label>
        </div>
-       <div class="field-group full-width radio-group">
+       <div id="email-format" class="field-group full-width radio-group">
            <p>Choose an email format:</p>
            <label><input type="radio" id="html" name="email_format" value="HTML"> HTML</label>
            <label><input type="radio" id="text" name="email_format" value="Text"> Text</label>

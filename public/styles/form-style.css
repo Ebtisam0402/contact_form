@@ -78,14 +78,15 @@ h1 {
 
 /* Adjustments for checkbox and radio buttons */
 .guestbook-form .checkbox-group label {
-  font-weight: normal;
+  /*font-weight: normal;*/
   display: flex;
   align-items: center;
+  justify-content: flex-start; /* <-- left-align inside label */
 }
 
 .guestbook-form .checkbox-group input[type="checkbox"] {
-  width: auto;
-  margin-right: 10px;
+  /*width: auto;*/
+  margin-right: 10px 0 0;
 }
 
 .guestbook-form .radio-group p {
@@ -119,6 +120,16 @@ h1 {
 
 .guestbook-form button:hover {
   background-color: #218838;
+}
+
+#email-format,
+#other-textbox {
+  display: none;
+}
+
+.error {
+    color: darkred;
+    display: none;
 }
 
 /* Responsive layout for smaller screens */
