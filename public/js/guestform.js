@@ -44,6 +44,15 @@ document.getElementById('guest-form').onsubmit = () => {
   return isValid;
 };
 
+// Validate "Other" field only if 'Other' is selected
+if (meet === "other") {
+  let otherValue = document.getElementById('other').value.trim();
+  if (!otherValue) {
+    document.getElementById('err-other').style.display = "block";
+    isValid = false;
+  }
+}
+
 // Clear previous errors
 function clearErrors() {
   let errors = document.getElementsByClassName("error");
@@ -64,7 +73,7 @@ document.getElementById('addme').addEventListener('change', () => {
 
 // 🌟 Show/hide "Other (please specify)" textbox when "Other" is selected
 document.getElementById('meet').addEventListener('change', () => {
-  let otherBox = document.getElementById('other-textbox');
+  let otherBox = document.getElementById('other-text');
   if (document.getElementById('meet').value === "other") {
     otherBox.style.display = "block";
   } else {

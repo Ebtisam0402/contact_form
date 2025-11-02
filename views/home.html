@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guestbook Form</title>
 
-     <!-- Link to JavaScript -->
+    <!-- Link to JavaScript -->
     <script src="/js/guestform.js"defer></script>
     
     <!-- Favicon -->
@@ -16,7 +16,7 @@
 </head>
 <body>
     <h1>Contact Form</h1>
-    <form id= "guest-form"class="guestbook-form">      
+    <form id= "guest-form" class= "guestbook-form" action="submit" method="post">      
        <div class="field-group">
            <label for="fname">First name:</label>
            <input type="text" id="fname" name="fname">
@@ -80,7 +80,7 @@
            <label><input type="radio" id="text" name="email_format" value="Text"> Text</label>
        </div>
        <div class="field-group full-width">
-           <button type="submit">Submit</button>
+           <button type="submit" id="submit">Submit</button>
        </div>
     </form>
     <a href=" https://ebtisam0402.github.io/contact_form/">link text</a>
