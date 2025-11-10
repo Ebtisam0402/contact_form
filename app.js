@@ -5,6 +5,9 @@ import express from 'express';
 // Create an instance of an Express application
 const app = express();
 
+// Set EJS as our view engine
+app.set('view engine', 'ejs');
+
 //Enable static file serving
 app.use(express.static('public'));
 
@@ -22,24 +25,34 @@ const PORT = 3003;
 // res: allows us to send back a response to the client
 app.get('/', (req,res) => {
     //send a response to the client
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+   // res.sendFile(`${import.meta.dirname}/views/home.html`);
+   res.render('resume');
+});
+// A contact form route
+app.get('/contact', (req, res) => {
+    res.render('contact'); // Make sure you have contact.ejs
 });
 //A confirm route
 app.get('/confirm', (req,res) => {
     //send a response to the client
-    res.sendFile(`${import.meta.dirname}/views/confirm.html`);
+   // res.sendFile(`${import.meta.dirname}/views/confirm.html`);
+    res.render('confirm');
 });
 
 //A Admin route
 app.get('/admin', (req,res) => {
     //send a response to the client
-    res.send(orders);
+    res.render('admin', { orders });
+   // res.send(orders);
 });
 
 // Define an "submit-order" route
 app.post('/submit', (req, res) => {
      // Create a Json object to store the data
-   const order = {
+        const order = req.body;
+    order.timestamp = new Date()
+ 
+     /* const order = {
    fname: req.body.fname,
    lname: req.body.lname,
    jtitle:req.body.jtitle,
@@ -48,14 +61,16 @@ app.post('/submit', (req, res) => {
    meet: req.body.meet,
    message: req.body.message
   
-};
+};*/
 
 //Add order to array
 orders.push(order);
 console.log(orders);
 
 // Send user to confirmation page
-res.sendFile(`${import.meta.dirname}/views/confirm.html`);  
+res.render('confirm', { order });
+//res.sendFile(`${import.meta.dirname}/views/confirm.html`);  
+
 });
 //Start the server and make it listen on the port
 // specified
